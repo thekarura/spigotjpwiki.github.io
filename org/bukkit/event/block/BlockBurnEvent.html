@@ -114,10 +114,9 @@
 <pre>public class <span class="strong">BlockBurnEvent</span>
 extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="class in org.bukkit.event.block">BlockEvent</a>
 implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></pre>
-<div class="block">Called when a block is destroyed as a result of being burnt by fire.
+<div class="block">火災によるブロック消失が起こる時に呼び出されるイベントです。
  <p>
- If a Block Burn event is cancelled, the block will not be destroyed as a
- result of being burnt by fire.</div>
+ このイベントがキャンセルされた場合燃えたブロックが消失する事はありません。</div>
 </li>
 </ul>
 </div>
@@ -194,13 +193,13 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockBurnEvent.html#isCancelled()">isCancelled</a></strong>()</code>
-<div class="block">Gets the cancellation state of this event.</div>
+<div class="block">他のリスナーがイベントキャンセルしているか判定します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockBurnEvent.html#setCancelled(boolean)">setCancelled</a></strong>(boolean&nbsp;cancel)</code>
-<div class="block">Sets the cancellation state of this event.</div>
+<div class="block">イベントをキャンセルをするか設定します。</div>
 </td>
 </tr>
 </table>
@@ -264,12 +263,11 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <h4>isCancelled</h4>
 <pre>public&nbsp;boolean&nbsp;isCancelled()</pre>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">Cancellable</a></code></strong></div>
-<div class="block">Gets the cancellation state of this event. A cancelled event will not
- be executed in the server, but will still pass to other plugins</div>
+<div class="block">他のリスナーがこのイベントをキャンセルしているか判定します。</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">isCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>true if this event is cancelled</dd></dl>
+<dt><span class="strong">Returns:</span></dt><dd>キャンセルされている場合は true を返します。</dd></dl>
 </li>
 </ul>
 <a name="setCancelled(boolean)">
@@ -280,12 +278,11 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <h4>setCancelled</h4>
 <pre>public&nbsp;void&nbsp;setCancelled(boolean&nbsp;cancel)</pre>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">Cancellable</a></code></strong></div>
-<div class="block">Sets the cancellation state of this event. A cancelled event will not
- be executed in the server, but will still pass to other plugins.</div>
+<div class="block">イベントをキャンセルするか設定します。キャンセルをした場合はブロックの焼失はされません。</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">setCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - true if you wish to cancel this event</dd></dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - true でイベントをキャンセルします。</dd></dl>
 </li>
 </ul>
 <a name="getHandlers()">

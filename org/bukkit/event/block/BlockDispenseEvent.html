@@ -114,10 +114,8 @@
 <pre>public class <span class="strong">BlockDispenseEvent</span>
 extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="class in org.bukkit.event.block">BlockEvent</a>
 implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></pre>
-<div class="block">Called when an item is dispensed from a block.
- <p>
- If a Block Dispense event is cancelled, the block will not dispense the
- item.</div>
+<div class="block">ブロックからアイテムが出される時に呼び出されます。主にディスペンサー、ドロッパーなどで呼ばれます。<p>
+ブロック破壊によりアイテムが出される場合は呼び出されません。</div>
 </li>
 </ul>
 </div>
@@ -196,37 +194,37 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../org/bukkit/inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#getItem()">getItem</a></strong>()</code>
-<div class="block">Gets the item that is being dispensed.</div>
+<div class="block">ブロックから出された ItemStack を返します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/bukkit/util/Vector.html" title="class in org.bukkit.util">Vector</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#getVelocity()">getVelocity</a></strong>()</code>
-<div class="block">Gets the velocity.</div>
+<div class="block">ブロックから出た時の Vector を返します。</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#isCancelled()">isCancelled</a></strong>()</code>
-<div class="block">Gets the cancellation state of this event.</div>
+<div class="block">他のリスナーがこのイベントをキャンセルしているか判定します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#setCancelled(boolean)">setCancelled</a></strong>(boolean&nbsp;cancel)</code>
-<div class="block">Sets the cancellation state of this event.</div>
+<div class="block">イベントをキャンセルするか設定します。</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#setItem(org.bukkit.inventory.ItemStack)">setItem</a></strong>(<a href="../../../../org/bukkit/inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;item)</code>
-<div class="block">Sets the item being dispensed.</div>
+<div class="block">ブロックから出される ItemStack を設定します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#setVelocity(org.bukkit.util.Vector)">setVelocity</a></strong>(<a href="../../../../org/bukkit/util/Vector.html" title="class in org.bukkit.util">Vector</a>&nbsp;vel)</code>
-<div class="block">Sets the velocity of the item being dispensed.</div>
+<div class="block">ブロックから出されるアイテムの Vector を設定します。</div>
 </td>
 </tr>
 </table>
@@ -291,9 +289,10 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <li class="blockList">
 <h4>getItem</h4>
 <pre>public&nbsp;<a href="../../../../org/bukkit/inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;getItem()</pre>
-<div class="block">Gets the item that is being dispensed. Modifying the returned item will
- have no effect, you must use <a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#setItem(org.bukkit.inventory.ItemStack)"><code>setItem(org.bukkit.inventory.ItemStack)</code></a> instead.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>An ItemStack for the item being dispensed</dd></dl>
+<div class="block">ブロックから出される ItemStack を返します。
+<p>
+注意: 返された ItemStack のデーターを変更してもイベントの動作に反映されません。もしブロックから出されるアイテムを設定したい場合は <a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#setItem(org.bukkit.inventory.ItemStack)"><code>setItem(org.bukkit.inventory.ItemStack)</code></a> を使用してください。</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>ブロックから出される ItemStack を返します。</dd></dl>
 </li>
 </ul>
 <a name="setItem(org.bukkit.inventory.ItemStack)">
@@ -303,8 +302,8 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <li class="blockList">
 <h4>setItem</h4>
 <pre>public&nbsp;void&nbsp;setItem(<a href="../../../../org/bukkit/inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;item)</pre>
-<div class="block">Sets the item being dispensed.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>item</code> - the item being dispensed</dd></dl>
+<div class="block">ブロックから出される ItemStack を設定します。</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>item</code> - ブロックから出すアイテム</dd></dl>
 </li>
 </ul>
 <a name="getVelocity()">
@@ -314,11 +313,10 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <li class="blockList">
 <h4>getVelocity</h4>
 <pre>public&nbsp;<a href="../../../../org/bukkit/util/Vector.html" title="class in org.bukkit.util">Vector</a>&nbsp;getVelocity()</pre>
-<div class="block">Gets the velocity.
+<div class="block">ブロックから出されるアイテムの Vector を返します。
  <p>
- Note: Modifying the returned Vector will not change the velocity, you
- must use <a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#setVelocity(org.bukkit.util.Vector)"><code>setVelocity(org.bukkit.util.Vector)</code></a> instead.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>A Vector for the dispensed item's velocity</dd></dl>
+ 注意: 返された Vector の値を変更してもイベントの動作に反映されません。もし ブロックから出されるアイテムの Vecor を設定したい場合は <a href="../../../../org/bukkit/event/block/BlockDispenseEvent.html#setVelocity(org.bukkit.util.Vector)"><code>setVelocity(org.bukkit.util.Vector)</code></a> を使用してください。</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>ブロックから出されるアイテムの Vector を返します。</dd></dl>
 </li>
 </ul>
 <a name="setVelocity(org.bukkit.util.Vector)">
@@ -328,8 +326,8 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <li class="blockList">
 <h4>setVelocity</h4>
 <pre>public&nbsp;void&nbsp;setVelocity(<a href="../../../../org/bukkit/util/Vector.html" title="class in org.bukkit.util">Vector</a>&nbsp;vel)</pre>
-<div class="block">Sets the velocity of the item being dispensed.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vel</code> - the velocity of the item being dispensed</dd></dl>
+<div class="block">ブロックから出される Vector を設定します。</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>vel</code> - ブロックから出すアイテムの Vector</dd></dl>
 </li>
 </ul>
 <a name="isCancelled()">
@@ -340,12 +338,11 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <h4>isCancelled</h4>
 <pre>public&nbsp;boolean&nbsp;isCancelled()</pre>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">Cancellable</a></code></strong></div>
-<div class="block">Gets the cancellation state of this event. A cancelled event will not
- be executed in the server, but will still pass to other plugins</div>
+<div class="block">他のリスナーがこのイベントをキャンセルしているか判定します。</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">isCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>true if this event is cancelled</dd></dl>
+<dt><span class="strong">Returns:</span></dt><dd>キャンセルされている場合は true を返します。</dd></dl>
 </li>
 </ul>
 <a name="setCancelled(boolean)">
@@ -356,12 +353,11 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <h4>setCancelled</h4>
 <pre>public&nbsp;void&nbsp;setCancelled(boolean&nbsp;cancel)</pre>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">Cancellable</a></code></strong></div>
-<div class="block">Sets the cancellation state of this event. A cancelled event will not
- be executed in the server, but will still pass to other plugins.</div>
+<div class="block">イベントをキャンセルするか設定します。キャンセルをした場合アイテムが出ることはありません。</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">setCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - true if you wish to cancel this event</dd></dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - true でイベントをキャンセルします。</dd></dl>
 </li>
 </ul>
 <a name="getHandlers()">

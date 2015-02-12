@@ -114,9 +114,9 @@
 <pre>public class <span class="strong">BlockDamageEvent</span>
 extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="class in org.bukkit.event.block">BlockEvent</a>
 implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></pre>
-<div class="block">Called when a block is damaged by a player.
+<div class="block">プレイヤーがブロックにダメージを与えている時に呼び出されます。
  <p>
- If a Block Damage event is cancelled, the block will not be damaged.</div>
+ このイベントをキャンセルするとヒビの表示は続きますがブロックの破壊はされません。</div>
 </li>
 </ul>
 </div>
@@ -196,37 +196,37 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDamageEvent.html#getInstaBreak()">getInstaBreak</a></strong>()</code>
-<div class="block">Gets if the block is set to instantly break when damaged by the player.</div>
+<div class="block">ブロックへダメージを与えた瞬間に破壊が出来るかを判定します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/bukkit/inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDamageEvent.html#getItemInHand()">getItemInHand</a></strong>()</code>
-<div class="block">Gets the ItemStack for the item currently in the player's hand.</div>
+<div class="block">プレイヤーが持っている ItemStack を習得します。</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../org/bukkit/entity/Player.html" title="interface in org.bukkit.entity">Player</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDamageEvent.html#getPlayer()">getPlayer</a></strong>()</code>
-<div class="block">Gets the player damaging the block involved in this event.</div>
+<div class="block">ブロックにダメージを与えた Player を習得します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDamageEvent.html#isCancelled()">isCancelled</a></strong>()</code>
-<div class="block">Gets the cancellation state of this event.</div>
+<div class="block">他のリスナーがイベントをキャンセルしているか判定します。</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDamageEvent.html#setCancelled(boolean)">setCancelled</a></strong>(boolean&nbsp;cancel)</code>
-<div class="block">Sets the cancellation state of this event.</div>
+<div class="block">イベントをキャンセルをするか設定します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockDamageEvent.html#setInstaBreak(boolean)">setInstaBreak</a></strong>(boolean&nbsp;bool)</code>
-<div class="block">Sets if the block should instantly break when damaged by the player.</div>
+<div class="block">ブロックへダメージを与えた瞬間に破壊が出来るかを設定します。</div>
 </td>
 </tr>
 </table>
@@ -292,8 +292,8 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <li class="blockList">
 <h4>getPlayer</h4>
 <pre>public&nbsp;<a href="../../../../org/bukkit/entity/Player.html" title="interface in org.bukkit.entity">Player</a>&nbsp;getPlayer()</pre>
-<div class="block">Gets the player damaging the block involved in this event.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The player damaging the block involved in this event</dd></dl>
+<div class="block">ブロックにダメージを与えたプレイヤーを習得します。</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>ブロックにダメージを与えたプレイヤーが返されます。</dd></dl>
 </li>
 </ul>
 <a name="getInstaBreak()">
@@ -303,9 +303,8 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <li class="blockList">
 <h4>getInstaBreak</h4>
 <pre>public&nbsp;boolean&nbsp;getInstaBreak()</pre>
-<div class="block">Gets if the block is set to instantly break when damaged by the player.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>true if the block should instantly break when damaged by the
-     player</dd></dl>
+<div class="block">ブロックへダメージを与えた瞬間に破壊が出来るかを判定します。</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>設定が有効であれば true を返します。</dd></dl>
 </li>
 </ul>
 <a name="setInstaBreak(boolean)">
@@ -315,9 +314,8 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <li class="blockList">
 <h4>setInstaBreak</h4>
 <pre>public&nbsp;void&nbsp;setInstaBreak(boolean&nbsp;bool)</pre>
-<div class="block">Sets if the block should instantly break when damaged by the player.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>bool</code> - true if you want the block to instantly break when damaged
-     by the player</dd></dl>
+<div class="block">ブロックへダメージを与えた瞬間に破壊が出来るかを設定します。</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>bool</code> - true を指定すると有効化され瞬時にブロックが破壊出来るようになります。</dd></dl>
 </li>
 </ul>
 <a name="getItemInHand()">
@@ -327,8 +325,8 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <li class="blockList">
 <h4>getItemInHand</h4>
 <pre>public&nbsp;<a href="../../../../org/bukkit/inventory/ItemStack.html" title="class in org.bukkit.inventory">ItemStack</a>&nbsp;getItemInHand()</pre>
-<div class="block">Gets the ItemStack for the item currently in the player's hand.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The ItemStack for the item currently in the player's hand</dd></dl>
+<div class="block">プレイヤーが持っている ItemStack を習得します。</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>プレイヤーが持っている ItemStack を返します。</dd></dl>
 </li>
 </ul>
 <a name="isCancelled()">
@@ -339,12 +337,11 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <h4>isCancelled</h4>
 <pre>public&nbsp;boolean&nbsp;isCancelled()</pre>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">Cancellable</a></code></strong></div>
-<div class="block">Gets the cancellation state of this event. A cancelled event will not
- be executed in the server, but will still pass to other plugins</div>
+<div class="block">他のリスナーがこのイベントをキャンセルしているか判定します。</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">isCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>true if this event is cancelled</dd></dl>
+<dt><span class="strong">Returns:</span></dt><dd>キャンセルされている場合は true を返します。</dd></dl>
 </li>
 </ul>
 <a name="setCancelled(boolean)">
@@ -355,12 +352,11 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <h4>setCancelled</h4>
 <pre>public&nbsp;void&nbsp;setCancelled(boolean&nbsp;cancel)</pre>
 <div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">Cancellable</a></code></strong></div>
-<div class="block">Sets the cancellation state of this event. A cancelled event will not
- be executed in the server, but will still pass to other plugins.</div>
+<div class="block">イベントをキャンセルするか設定します。キャンセルをした場合ブロックは破壊されません。</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
 <dd><code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">setCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - true if you wish to cancel this event</dd></dl>
+<dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - cancel - true でイベントをキャンセルします。</dd></dl>
 </li>
 </ul>
 <a name="getHandlers()">
