@@ -113,7 +113,7 @@
 <br>
 <pre>public class <span class="strong">BlockExpEvent</span>
 extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="class in org.bukkit.event.block">BlockEvent</a></pre>
-<div class="block">An event that's called when a block yields experience.</div>
+<div class="block">ブロックから経験値が出る時に呼び出されます。</div>
 </li>
 </ul>
 </div>
@@ -183,7 +183,7 @@ extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="clas
 <tr class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockExpEvent.html#getExpToDrop()">getExpToDrop</a></strong>()</code>
-<div class="block">Get the experience dropped by the block after the event has processed</div>
+<div class="block">ブロックを破壊した時に出てくる経験値の量を取得します。</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -197,8 +197,7 @@ extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="clas
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockExpEvent.html#setExpToDrop(int)">setExpToDrop</a></strong>(int&nbsp;exp)</code>
-<div class="block">Set the amount of experience dropped by the block after the event has
- processed</div>
+<div class="block">ブロックを破壊した時に出てくる経験値の量を設定します。</div>
 </td>
 </tr>
 </table>
@@ -262,8 +261,8 @@ extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="clas
 <li class="blockList">
 <h4>getExpToDrop</h4>
 <pre>public&nbsp;int&nbsp;getExpToDrop()</pre>
-<div class="block">Get the experience dropped by the block after the event has processed</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The experience to drop</dd></dl>
+<div class="block">ブロックを破壊した時に出てくる経験値の量を取得します。</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>ドロップする経験値を返します。</dd></dl>
 </li>
 </ul>
 <a name="setExpToDrop(int)">
@@ -273,9 +272,8 @@ extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="clas
 <li class="blockList">
 <h4>setExpToDrop</h4>
 <pre>public&nbsp;void&nbsp;setExpToDrop(int&nbsp;exp)</pre>
-<div class="block">Set the amount of experience dropped by the block after the event has
- processed</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>exp</code> - 1 or higher to drop experience, else nothing will drop</dd></dl>
+<div class="block">ブロックを破壊した時に出てくる経験値の量を設定します。</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>exp</code> - 通常では経験値の出さないブロックからも経験値が出るようになります。</dd></dl>
 </li>
 </ul>
 <a name="getHandlers()">

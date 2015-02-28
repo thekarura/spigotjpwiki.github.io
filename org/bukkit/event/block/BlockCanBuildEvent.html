@@ -109,13 +109,12 @@
 <br>
 <pre>public class <span class="strong">BlockCanBuildEvent</span>
 extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="class in org.bukkit.event.block">BlockEvent</a></pre>
-<div class="block">Called when we try to place a block, to see if we can build it here or not.
+<div class="block">
  <p>
- Note:
+ Note: ブロックを配置しようとした時に呼び出されます。主にブロックが配置可能であるかを確認する為に使用されます。
  <ul>
- <li>The Block returned by getBlock() is the block we are trying to place
-     on, not the block we are trying to place.
- <li>If you want to figure out what is being placed, use <a href="../../../../org/bukkit/event/block/BlockCanBuildEvent.html#getMaterial()"><code>getMaterial()</code></a> or <a href="../../../../org/bukkit/event/block/BlockCanBuildEvent.html#getMaterialId()"><code>getMaterialId()</code></a> instead.
+ <li> getBlock()が返すBlockクラスは配置される前のブロックを返します。
+ <li> あなたが配置しようとしたブロックが配置出来ているかを確認したい場合は <a href="../../../../org/bukkit/event/block/BlockCanBuildEvent.html#getMaterial()"><code>getMaterial()</code></a> もしくは <a href="../../../../org/bukkit/event/block/BlockCanBuildEvent.html#getMaterialId()"><code>getMaterialId()</code></a> を使用してください.
  </ul></div>
 </li>
 </ul>
@@ -218,27 +217,27 @@ extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="clas
 <tr class="altColor">
 <td class="colFirst"><code><a href="../../../../org/bukkit/Material.html" title="enum in org.bukkit">Material</a></code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockCanBuildEvent.html#getMaterial()">getMaterial</a></strong>()</code>
-<div class="block">Gets the Material that we are trying to place.</div>
+<div class="block">配置しようとしているMaterialクラスを取得します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockCanBuildEvent.html#getMaterialId()">getMaterialId</a></strong>()</code>
-<div class="block"><strong>Deprecated.</strong>&nbsp;
-<div class="block"><i>Magic value</i></div>
+<div class="block"><strong>推奨されていません。</strong>&nbsp;
+<div class="block"><i>マジックナンバー</i></div>
 </div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockCanBuildEvent.html#isBuildable()">isBuildable</a></strong>()</code>
-<div class="block">Gets whether or not the block can be built here.</div>
+<div class="block">ブロックが配置出来るかを判定します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><strong><a href="../../../../org/bukkit/event/block/BlockCanBuildEvent.html#setBuildable(boolean)">setBuildable</a></strong>(boolean&nbsp;cancel)</code>
-<div class="block">Sets whether the block can be built here or not.</div>
+<div class="block">ブロックが配置出来るかを設定します。</div>
 </td>
 </tr>
 </table>
@@ -294,7 +293,7 @@ extends <a href="../../../../org/bukkit/event/block/BlockEvent.html" title="clas
 <h4>material</h4>
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 protected&nbsp;int material</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Magic value</i></div>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>マジックナンバー</i></div>
 </li>
 </ul>
 </li>
@@ -315,8 +314,8 @@ protected&nbsp;int material</pre>
 public&nbsp;BlockCanBuildEvent(<a href="../../../../org/bukkit/block/Block.html" title="interface in org.bukkit.block">Block</a>&nbsp;block,
                              int&nbsp;id,
                              boolean&nbsp;canBuild)</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Magic value</i></div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>block</code> - the block involved in this event</dd><dd><code>id</code> - the id of the block to place</dd><dd><code>canBuild</code> - whether we can build</dd></dl>
+<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>マジックナンバー</i></div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>block</code> - このイベントに関するブロック</dd><dd><code>id</code> - 配置するブロックのID</dd><dd><code>canBuild</code> - 配置出来るかについての判定</dd></dl>
 </li>
 </ul>
 </li>
@@ -334,11 +333,10 @@ public&nbsp;BlockCanBuildEvent(<a href="../../../../org/bukkit/block/Block.html"
 <li class="blockList">
 <h4>isBuildable</h4>
 <pre>public&nbsp;boolean&nbsp;isBuildable()</pre>
-<div class="block">Gets whether or not the block can be built here.
+<div class="block">ブロックが配置出来るかを判定します。
  <p>
- By default, returns Minecraft's answer on whether the block can be
- built here or not.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>boolean whether or not the block can be built</dd></dl>
+ デフォルトでの配置判定はMinecraftサーバーが返します。</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>ブロックが配置できるかを判定します。</dd></dl>
 </li>
 </ul>
 <a name="setBuildable(boolean)">
@@ -348,9 +346,8 @@ public&nbsp;BlockCanBuildEvent(<a href="../../../../org/bukkit/block/Block.html"
 <li class="blockList">
 <h4>setBuildable</h4>
 <pre>public&nbsp;void&nbsp;setBuildable(boolean&nbsp;cancel)</pre>
-<div class="block">Sets whether the block can be built here or not.</div>
-<dl><dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - true if you want to allow the block to be built here
-     despite Minecraft's default behaviour</dd></dl>
+<div class="block">ブロックが配置出来るかを設定します。</div>
+<dl><dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - trueを設定すると判定に関わらず配置出来るようになります。</dd></dl>
 </li>
 </ul>
 <a name="getMaterial()">
@@ -360,8 +357,8 @@ public&nbsp;BlockCanBuildEvent(<a href="../../../../org/bukkit/block/Block.html"
 <li class="blockList">
 <h4>getMaterial</h4>
 <pre>public&nbsp;<a href="../../../../org/bukkit/Material.html" title="enum in org.bukkit">Material</a>&nbsp;getMaterial()</pre>
-<div class="block">Gets the Material that we are trying to place.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The Material that we are trying to place</dd></dl>
+<div class="block">配置しようとしているMaterialクラスを取得します。</div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>配置しようとしているMaterialクラスを返します。</dd></dl>
 </li>
 </ul>
 <a name="getMaterialId()">
@@ -372,9 +369,9 @@ public&nbsp;BlockCanBuildEvent(<a href="../../../../org/bukkit/block/Block.html"
 <h4>getMaterialId</h4>
 <pre><a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Deprecated.html?is-external=true" title="class or interface in java.lang">@Deprecated</a>
 public&nbsp;int&nbsp;getMaterialId()</pre>
-<div class="block"><span class="strong">Deprecated.</span>&nbsp;<i>Magic value</i></div>
-<div class="block">Gets the Material ID for the Material that we are trying to place.</div>
-<dl><dt><span class="strong">Returns:</span></dt><dd>The Material ID for the Material that we are trying to place</dd></dl>
+<div class="block"><span class="strong">推奨されない.</span>&nbsp;<i>マジックナンバー</i></div>
+<div class="block">配置しようとしているブロックのIDを返します。<b>BlockIDは将来的に削除されます。代わりにgetMaterial()を使用してください</b></div>
+<dl><dt><span class="strong">Returns:</span></dt><dd>配置しようとしているブロックIDを返します。</dd></dl>
 </li>
 </ul>
 <a name="getHandlers()">

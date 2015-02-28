@@ -294,29 +294,27 @@ implements <a href="../../../../org/bukkit/event/Cancellable.html" title="interf
 <li class="blockList">
 <h4>isCancelled</h4>
 <pre>public&nbsp;boolean&nbsp;isCancelled()</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">Cancellable</a></code></strong></div>
-<div class="block">Gets the cancellation state of this event. A cancelled event will not
- be executed in the server, but will still pass to other plugins</div>
+<div class="block"><strong>Description &nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">Cancellable</a></code></strong> インターフェースからのコピー</div>
+<div class="block">他のリスナーがこのイベントをキャンセルしているか判定します。</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">isCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
-<dt><span class="strong">Returns:</span></dt><dd>true if this event is cancelled</dd></dl>
+<dd><code><a href="../../../../org/bukkit/event/Cancellable.html#isCancelled()">isCancelled</a></code>&nbsp;のインターフェース&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
+<dt><span class="strong">Returns:</span></dt><dd>キャンセルされている場合は true を返します。</dd></dl>
 </li>
 </ul>
 <a name="setCancelled(boolean)">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>setCancelled</h4>
 <pre>public&nbsp;void&nbsp;setCancelled(boolean&nbsp;cancel)</pre>
-<div class="block"><strong>Description copied from interface:&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">Cancellable</a></code></strong></div>
-<div class="block">Sets the cancellation state of this event. A cancelled event will not
- be executed in the server, but will still pass to other plugins.</div>
+<div class="block"><strong>Description &nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">Cancellable</a></code></strong> インターフェースからのコピー</div>
+<div class="block">イベントをキャンセルするか設定します。キャンセルをした場合ブロックは破壊されません。</div>
 <dl>
 <dt><strong>Specified by:</strong></dt>
-<dd><code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">setCancelled</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
-<dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - true if you wish to cancel this event</dd></dl>
+<dd><code><a href="../../../../org/bukkit/event/Cancellable.html#setCancelled(boolean)">setCancelled</a></code>&nbsp;のインターフェース&nbsp;<code><a href="../../../../org/bukkit/event/Cancellable.html" title="interface in org.bukkit.event">Cancellable</a></code></dd>
+<dt><span class="strong">Parameters:</span></dt><dd><code>cancel</code> - true でイベントをキャンセルします。</dd></dl>
 </li>
 </ul>
 <a name="getHandlers()">
