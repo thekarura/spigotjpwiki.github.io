@@ -154,7 +154,7 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <tr class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#clearRecipes()">clearRecipes</a></strong>()</code>
-<div class="block">Clears the list of crafting recipes.</div>
+<div class="block">アイテムレシピのリストをクリアします。</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -176,15 +176,15 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#createInventory(org.bukkit.inventory.InventoryHolder,%20int,%20java.lang.String)">createInventory</a></strong>(<a href="../../org/bukkit/inventory/InventoryHolder.html" title="interface in org.bukkit.inventory">InventoryHolder</a>&nbsp;owner,
                int&nbsp;size,
                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;title)</code>
-<div class="block">Creates an empty inventory of type <a href="../../org/bukkit/event/inventory/InventoryType.html#CHEST"><code>InventoryType.CHEST</code></a> with the
- specified size and title.</div>
+<div class="block">中身がからの <a href="../../org/bukkit/event/inventory/InventoryType.html#CHEST"><code>InventoryType.CHEST</code></a> 型インベントリを作成します。
+ title でインベントリ名を指定出来ます。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../org/bukkit/inventory/Inventory.html" title="interface in org.bukkit.inventory">Inventory</a></code></td>
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#createInventory(org.bukkit.inventory.InventoryHolder,%20org.bukkit.event.inventory.InventoryType)">createInventory</a></strong>(<a href="../../org/bukkit/inventory/InventoryHolder.html" title="interface in org.bukkit.inventory">InventoryHolder</a>&nbsp;owner,
                <a href="../../org/bukkit/event/inventory/InventoryType.html" title="enum in org.bukkit.event.inventory">InventoryType</a>&nbsp;type)</code>
-<div class="block">Creates an empty inventory of the specified type.</div>
+<div class="block">中身が空の指定された型のインベントリを作成します。</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -192,45 +192,44 @@ extends <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html?
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#createInventory(org.bukkit.inventory.InventoryHolder,%20org.bukkit.event.inventory.InventoryType,%20java.lang.String)">createInventory</a></strong>(<a href="../../org/bukkit/inventory/InventoryHolder.html" title="interface in org.bukkit.inventory">InventoryHolder</a>&nbsp;owner,
                <a href="../../org/bukkit/event/inventory/InventoryType.html" title="enum in org.bukkit.event.inventory">InventoryType</a>&nbsp;type,
                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;title)</code>
-<div class="block">Creates an empty inventory with the specified type and title.</div>
+<div class="block">中身が空の指定された型のインベントリを作成します。title でインベントリ名を指定出来ます。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static <a href="../../org/bukkit/map/MapView.html" title="interface in org.bukkit.map">MapView</a></code></td>
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#createMap(org.bukkit.World)">createMap</a></strong>(<a href="../../org/bukkit/World.html" title="interface in org.bukkit">World</a>&nbsp;world)</code>
-<div class="block">Create a new map with an automatically assigned ID.</div>
+<div class="block">指定されたワールドの地図を作成します。IDの割り当ては自動的に行われます。</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static <a href="../../org/bukkit/World.html" title="interface in org.bukkit">World</a></code></td>
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#createWorld(org.bukkit.WorldCreator)">createWorld</a></strong>(<a href="../../org/bukkit/WorldCreator.html" title="class in org.bukkit">WorldCreator</a>&nbsp;creator)</code>
-<div class="block">Creates or loads a world with the given name using the specified
- options.</div>
+<div class="block">指定されたオプションを元にワールドを新たに生成します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#dispatchCommand(org.bukkit.command.CommandSender,%20java.lang.String)">dispatchCommand</a></strong>(<a href="../../org/bukkit/command/CommandSender.html" title="interface in org.bukkit.command">CommandSender</a>&nbsp;sender,
                <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/String.html?is-external=true" title="class or interface in java.lang">String</a>&nbsp;commandLine)</code>
-<div class="block">Dispatches a command on this server, and executes it if found.</div>
+<div class="block">commandLine からサーバーに登録されているコマンドを実行します。</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#getAllowEnd()">getAllowEnd</a></strong>()</code>
-<div class="block">Gets whether this server allows the End or not.</div>
+<div class="block">サーバー設定がデフォルトのENDワールドの生成が許可されているか取得します。</div>
 </td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#getAllowFlight()">getAllowFlight</a></strong>()</code>
-<div class="block">Gets whether this server allows flying or not.</div>
+<div class="block">サーバー設定が飛行を許可しているか取得します。</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><strong><a href="../../org/bukkit/Bukkit.html#getAllowNether()">getAllowNether</a></strong>()</code>
-<div class="block">Gets whether this server allows the Nether or not.</div>
+<div class="block">サーバー設定がデフォルトのネザーワールドの生成が許可されているか取得します。.</div>
 </td>
 </tr>
 <tr class="rowColor">
